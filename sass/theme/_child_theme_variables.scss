@@ -5,5 +5,21 @@
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
+$brand-primary:         rgba(0,0,0,0.4); //#fece00; //#ff6d5a
 
-$brand-primary:         #fece00; //#ff6d5a
+// Basics of a navbar
+$navbar-height:                    60px;
+$navbar-margin-bottom:             0px;
+$navbar-border-radius:             0px;
+
+// Links
+// Style anchor elements
+$link-color:            			black !default;
+$link-decoration:       			none !default;
+$link-hover-color:      			red !default;
+$link-hover-decoration: 			none !default;
+
+// Google Fonts!!!
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Days+One);
+$nav-header-font: 'Days One', sans-serif;
