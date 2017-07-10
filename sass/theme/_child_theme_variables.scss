@@ -5,6 +5,11 @@
 // Thats the ugly Bootstrap blue used for all the links, primary buttons etc.
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
+
+$asset-images :         "../assets/images";
+$site-images:           $asset-images + "/site";
+$site-common-images:    $site-images + "/common";
+
 $brand-primary:         rgba(0,0,0,0.4); //#fece00; //#ff6d5a
 
 // Basics of a navbar

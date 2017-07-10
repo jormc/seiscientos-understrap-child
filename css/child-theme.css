@@ -9436,6 +9436,9 @@ h1.navbar-brand a:hover {
 .gallery-caption {
   display: block; }
 
+body {
+  background: url("../assets/images/site/common/background.jpg"); }
+
 #wrapper-navbar {
   margin-bottom: 30px; }
   #wrapper-navbar .wrapper-navbar-brand {

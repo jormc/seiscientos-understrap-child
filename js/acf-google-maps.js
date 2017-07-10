@@ -72,7 +72,7 @@
 
 	 	// marker image
 		var image = {
-	    url: theme_vars.context + '/images/' + chincheta
+	    url: theme_vars.context + '/assets/images/site/clubes/' + chincheta
 	  };
 
 	  console.log(verified);
