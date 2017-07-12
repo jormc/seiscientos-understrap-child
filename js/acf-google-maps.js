@@ -3,7 +3,7 @@
 	var infowindow = new google.maps.InfoWindow({  
 	  content: ''
 	});
-	var defaultZoom = 16;
+	var defaultZoom = 6;
  
 	/*
 	*  render_map

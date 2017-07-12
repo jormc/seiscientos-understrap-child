@@ -33,6 +33,8 @@ var ignore = require('gulp-ignore');
 var rimraf = require('gulp-rimraf');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
+var clean = require('gulp-clean');
+var zip = require('gulp-zip');
 
 // Run: 
 // gulp sass + cssnano + rename
@@ -217,4 +219,13 @@ gulp.task('copy-assets', function() {
 gulp.task('dist', function() {
     gulp.src(['**/*','!sass','!sass/**','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!src','!src/**','!dist','!bower.json', '!gulpfile.js', '!package.json', '*'])
     .pipe(gulp.dest('dist/'))
+});
+
+// Run
+// gulp dist-zip
+// Copies the files to the /dist folder into a zip file for distributon
+gulp.task('dist-zip', function() {
+    gulp.src(['**/*','!sass','!sass/**','!bower_components','!bower_components/**','!node_modules','!node_modules/**','!src','!src/**','!dist','!bower.json', '!gulpfile.js', '!package.json', '*'])
+    .pipe(zip('seiscientos.org.zip'))
+    .pipe(gulp.dest('dist-zip/'))
 });

@@ -1,7 +1,9 @@
+//////////////////////////////////////////////////////////////////////////////
+//	BODY / MAIN / GENERAL
+//////////////////////////////////////////////////////////////////////////////
 body {
 	background: url("#{$site-common-images}/background.jpg");
 }
-
 
 //////////////////////////////////////////////////////////////////////////////
 //	NAVBAR
@@ -171,7 +173,7 @@ h3.widget-title, h4.widget-title {
 
 // Right sidebar widgets
 #right-sidebar aside.widget {
-		padding: 10px;
+	padding: 10px;
     background-color: rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
@@ -261,8 +263,8 @@ h3.widget-title, h4.widget-title {
 .breadcrumb {
 	padding: 0.2rem 1rem;
 	background-color: rgba(0,0,0,0.1);
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
+  	border: 1px solid rgba(0,0,0,.125);
+  	border-radius: .25rem;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -270,7 +272,7 @@ h3.widget-title, h4.widget-title {
 //////////////////////////////////////////////////////////////////////////////
 iframe {
 	border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;	
+  	border-radius: .25rem;	
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -280,10 +282,10 @@ div.club {
 	img.club-logo {
 		float: right;
 		border: 1px solid rgba(0,0,0,.125);
-	  border-radius: .25rem;
-	  margin: 0px;
-	  max-width: 150px;
-	  max-height: 150px;
+	  	border-radius: .25rem;
+	  	margin: 0px;
+	  	max-width: 150px;
+	  	max-height: 150px;
 	};
 	h6 {
 		/*margin-right: 165px;*/
@@ -329,37 +331,38 @@ div.club {
 .club-list-accordion {
 	
 	border: 3px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
+  	border-radius: .25rem;
 
-  .card-header {
-  	background-color: rgba(0,0,0,.125) !important;
-  }
+	.card-header {
+		background-color: rgba(0,0,0,.125) !important;
+	}
 
 	ul.club-list {
 	
 		list-style-type: none !important;
 		margin-bottom: 0px !important;
-	
+		padding-left: 15px;		
+
 		li.club-item a {
 			margin-left: 0.5rem
 		};
 
 		li.club-item:before {
 			content: "\f1b9"; /* FontAwesome Unicode */
-		  font-family: FontAwesome;
-		  display: inline-block;
-		  margin-left: -1.3em; /* same as padding-left set on li */
-		  width: 1.3em; /* same as padding-left set on li */
-		  /*color: rgba(0,0,0,0.4);*/
-		  font-size: 0.8rem;
+			font-family: FontAwesome;
+			display: inline-block;
+			margin-left: -1.3em; /* same as padding-left set on li */
+			width: 1.3em; /* same as padding-left set on li */
+			/*color: rgba(0,0,0,0.4);*/
+			font-size: 0.8rem;
 
-		  .verified {
-		  	color: green;
-		  };
-		  
-		  .non-verified {
-		  	color: red;
-		  }
+			.verified {
+				color: green;
+			};
+			
+			.non-verified {
+				color: red;
+			}
 		};
 
 	}
