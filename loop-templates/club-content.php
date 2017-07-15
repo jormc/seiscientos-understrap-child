@@ -27,7 +27,7 @@
 		    </h4>
 		    -->
 		    <h6 class="card-subtitle mb-2 text-muted">
-				<?php the_post_thumbnail('thumbnail', array('class' => 'club-logo')); ?>
+				<?php the_post_thumbnail('full', array('class' => 'club-logo')); ?>
 				<span class="club-headquarters"><?php the_field('headquarters'); ?></span>
 				<span class="club-address"><?php the_field('address'); ?></span>
         	</h6>
@@ -40,11 +40,11 @@
 								<div class="detail"><span><?php the_field('foundation_date'); ?></span><i class="fa fa-calendar" aria-hidden="true"></i></div>
 							</div>
 						<li class="list-group-item justify-content-between">Club multimarca <span class="badge badge-default badge-pill"><?php if (get_field('is_multimarc') == 1): ?>Si<?php else: ?>No<?php endif; ?></span></li>
-						<?php if( get_field('president_name') || get_field('president_phone') || get_field('president_email') ): ?>
+						<?php if( get_field('president') || get_field('president_phone') || get_field('president_email') ): ?>
 						<li class="list-group-item justify-content-between">Presidente
 							<div>
-								<?php if( get_field('president_name') ): ?>
-								<div class="detail"><span><?php the_field('president_name'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
+								<?php if( get_field('president') ): ?>
+								<div class="detail"><span><?php the_field('president'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('president_phone') ): ?>
 								<div class="detail"><span><?php the_field('president_phone'); ?></span><i class="fa fa-phone-square" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('president_email') ): ?>
@@ -52,11 +52,11 @@
 								<?php endif; ?>		
 							</div>
 						</li>
-						<?php endif; if( get_field('vicepresident_name') || get_field('vicepresident_phone') || get_field('vicepresident_email') ): ?>
+						<?php endif; if( get_field('vicepresident') || get_field('vicepresident_phone') || get_field('vicepresident_email') ): ?>
 						<li class="list-group-item justify-content-between">Vicepresidente
 							<div>
-								<?php if( get_field('vicepresident_name') ): ?>
-								<div class="detail"><span><?php the_field('vicepresident_name'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
+								<?php if( get_field('vicepresident') ): ?>
+								<div class="detail"><span><?php the_field('vicepresident'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('vicepresident_phone') ): ?>
 								<div class="detail"><span><?php the_field('vicepresident_phone'); ?></span><i class="fa fa-phone-square" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('vicepresident_email') ): ?>
@@ -64,11 +64,11 @@
 								<?php endif; ?>
 							</div>
 						</li>
-						<?php endif; if( get_field('secretary_name') || get_field('secretary_phone') || get_field('secretary_email') ): ?>
+						<?php endif; if( get_field('secretary') || get_field('secretary_phone') || get_field('secretary_email') ): ?>
 						<li class="list-group-item justify-content-between">Secretario
 							<div>
-								<?php if( get_field('secretary_name') ): ?>
-								<div class="detail"><span><?php the_field('secretary_name'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
+								<?php if( get_field('secretary') ): ?>
+								<div class="detail"><span><?php the_field('secretary'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('secretary_phone') ): ?>
 								<div class="detail"><span><?php the_field('secretary_phone'); ?></span><i class="fa fa-phone-square" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('secretary_email') ): ?>
@@ -76,11 +76,11 @@
 								<?php endif; ?>
 							</div>
 						</li>
-						<?php endif; if( get_field('treasurer_name') || get_field('treasurer_phone') || get_field('treasurer_email') ): ?>
+						<?php endif; if( get_field('treasurer') || get_field('treasurer_phone') || get_field('treasurer_email') ): ?>
 						<li class="list-group-item justify-content-between">Tesorero
 							<div>
-								<?php if( get_field('treasurer_name') ): ?>
-								<div class="detail"><span><?php the_field('treasurer_name'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
+								<?php if( get_field('treasurer') ): ?>
+								<div class="detail"><span><?php the_field('treasurer'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('treasurer_phone') ): ?>
 								<div class="detail"><span><?php the_field('treasurer_phone'); ?></span><i class="fa fa-phone-square" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('treasurer_email') ): ?>
@@ -88,11 +88,11 @@
 								<?php endif; ?>
 							</div>
 						</li>
-						<?php endif; if( get_field('vocal_name') || get_field('vocal_phone') || get_field('vocal_email') ): ?>
+						<?php endif; if( get_field('vocal') || get_field('vocal_phone') || get_field('vocal_email') ): ?>
 						<li class="list-group-item justify-content-between">Vocal
 							<div>
-								<?php if( get_field('vocal_name') ): ?>
-								<div class="detail"><span><?php the_field('vocal_name'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
+								<?php if( get_field('vocal') ): ?>
+								<div class="detail"><span><?php the_field('vocal'); ?></span><i class="fa fa-address-card" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('vocal_phone') ): ?>
 								<div class="detail"><span><?php the_field('vocal_phone'); ?></span><i class="fa fa-phone-square" aria-hidden="true"></i></div>
 								<?php endif; if( get_field('vocal_email') ): ?>
@@ -124,12 +124,13 @@
 								<div class="detail"><span><?php the_field('webpage'); ?></span><i class="fa fa-globe" aria-hidden="true"></i></div>
 							</div>
 						</li>
-						<?php endif; ?>
-						<li class="list-group-item justify-content-between">Otros datos 
+						<?php endif;  if( get_field('description') ): ?>
+						<li class="list-group-item justify-content-between"><span>Descripci&oacute;n</span><hr />
 							<div>
-								<div class="detail"><span>&nbsp;</span><i class="fa fa-pencil-square" aria-hidden="true"></i></div>
+								<div class="detail"><span><p style="text-align: left:"><?php the_field('description'); ?></p></span><i class="fa fa-pencil-square" aria-hidden="true"></i></div>
 							</div>
 						</li>
+						<?php endif; ?>
 						<li class="list-group-item justify-content-between">Verificado
 							<span class="badge badge-default badge-pill"><?php if (get_field('is_verified') == 1): ?>Si<?php else: ?>No<?php endif; ?></span>
 						</li>

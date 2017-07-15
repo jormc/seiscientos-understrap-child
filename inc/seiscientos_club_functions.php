@@ -13,7 +13,7 @@ function seiscientos_clubs_add_scripts() {
 		wp_localize_script( 'google-map-init', 'theme_vars', $translation_array );
   }
 }
-add_action( 'wp_enqueue_scripts', 'seiscientos_clubs_add_scripts' );
+//add_action( 'wp_enqueue_scripts', 'seiscientos_clubs_add_scripts' );
 
 function seiscientos_get_club_object($id) {
 

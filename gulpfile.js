@@ -33,7 +33,6 @@ var ignore = require('gulp-ignore');
 var rimraf = require('gulp-rimraf');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
-var clean = require('gulp-clean');
 var zip = require('gulp-zip');
 
 // Run: 

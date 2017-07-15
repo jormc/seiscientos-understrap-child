@@ -9610,8 +9610,8 @@ div.club img.club-logo {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: .25rem;
   margin: 0px;
-  max-width: 150px;
-  max-height: 150px; }
+  max-height: 150px;
+  width: auto; }
 
 div.club h6 {
   /*margin-right: 165px;*/
