@@ -49,3 +49,9 @@ require 'inc/seiscientos_section_functions.php';
  * Load Seiscientos.org Theme Utilities functions
  */
 require 'inc/seiscientos_theme_functions.php';
+
+/**
+ * Load Seiscientos.org Theme Customizer functions
+ */
+require 'inc/seiscientos_theme_customizer_functions.php';
+new Seiscientos_Theme_Customizer();
