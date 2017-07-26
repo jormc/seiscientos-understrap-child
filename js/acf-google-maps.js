@@ -3,7 +3,7 @@
 	var infowindow = new google.maps.InfoWindow({  
 	  content: ''
 	});
-	var defaultZoom = 6;
+	var defaultZoom = 5;
  
 	/*
 	*  render_map
@@ -97,7 +97,7 @@
 			google.maps.event.addListener(marker, 'click', function() {
 	 			infowindow.close();
 	 			infowindow.setContent($marker.html());
-      	infowindow.open(map, marker);
+      			infowindow.open(map, marker);
 	 		});
 		}
 	}
@@ -127,7 +127,9 @@
 		});
 		 
 		// only 1 marker?
-		if( map.markers.length == 1 ) {
+		if (map.markers.length === 0) {
+			centerMapByGeocoder(map, 'Spain');
+		} else if( map.markers.length === 1 ) {
 			// set center of map
 			map.setCenter( bounds.getCenter() );
 			map.setZoom( defaultZoom );
@@ -135,6 +137,7 @@
 			// fit to bounds
 			map.fitBounds( bounds );
 		}
+
 	}
 	 
 	/*

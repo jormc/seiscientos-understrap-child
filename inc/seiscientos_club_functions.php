@@ -6,14 +6,15 @@
  */
 
 function seiscientos_clubs_add_scripts() {
-  if (is_page('clubes')) {
-    wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCczx5e4FsAb_hECwVTRCdB1_YYeww_FLk', array(), '3', true );
-    wp_enqueue_script( 'google-map-init', get_stylesheet_directory_uri() . '/js/acf-google-maps.js', array('google-map', 'jquery'), '0.1', true );
-    $translation_array = array( 'context' => get_stylesheet_directory_uri() );
-	wp_localize_script( 'google-map-init', 'theme_vars', $translation_array );
-  }
+	wp_enqueue_script(
+		'clubs-google-map-init-js', 									// script name
+		get_stylesheet_directory_uri() . '/js/acf-google-maps.js', 		// script location
+		array('jquery', 'google-maps'), 								// script dependencies
+		'0.1', 															// script version
+		true 															// script in footer
+	);
 }
-//add_action( 'wp_enqueue_scripts', 'seiscientos_clubs_add_scripts' );
+add_action( 'wp_enqueue_scripts', 'seiscientos_clubs_add_scripts' );
 
 function seiscientos_get_club_object($id) {
 

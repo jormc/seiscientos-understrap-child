@@ -57,8 +57,9 @@ class Seiscientos_Theme_Customizer {
     */
     private function google_settings_section( $wp_customize ) {
 
+        /*
         /////////////////////////////////////
-        // Activate Google Analytics API
+        // Activate Google Analytics Code
         /////////////////////////////////////
         $wp_customize->add_setting( 'activate_google_analytics', array(
             'default'           => false,
@@ -74,19 +75,20 @@ class Seiscientos_Theme_Customizer {
         ) ) );
 
         /////////////////////////////////////
-        // Google Analytics API Key
+        // Google Analytics Code
         /////////////////////////////////////
-        $wp_customize->add_setting( 'google_analytics_api_key', array(
+        $wp_customize->add_setting( 'google_analytics_code', array(
             'default'           => ''
         ) );
-        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_analytics_api_key', array(
-            'label'       => esc_html__( 'Google Analytics Key for this site', 'seiscientos.org' ),
-            'description' => esc_html__( 'Put your own Google Analytics API Key to activate the feature for this site.', 'seiscientos.org' ),
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_analytics_code', array(
+            'label'       => esc_html__( 'Google Analytics code for this site', 'seiscientos.org' ),
+            'description' => esc_html__( 'Put your own Google Analytics code to activate the feature for this site.', 'seiscientos.org' ),
             'section'     => 'google_settings',
-            'settings'    => 'google_analytics_api_key',
+            'settings'    => 'google_analytics_code',
             'type'        => 'text',
             'priority'    => 10
         ) ) );
+        */
 
         /////////////////////////////////////
         // Activate Google Maps API

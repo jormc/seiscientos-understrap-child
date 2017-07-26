@@ -55,3 +55,8 @@ require 'inc/seiscientos_theme_functions.php';
  */
 require 'inc/seiscientos_theme_customizer_functions.php';
 new Seiscientos_Theme_Customizer();
+
+/**
+ * Load Google specific scripts and functions
+ */
+require 'inc/seiscientos_google_functions.php';
