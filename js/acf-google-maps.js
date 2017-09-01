@@ -3,7 +3,7 @@
 	var infowindow = new google.maps.InfoWindow({  
 	  content: ''
 	});
-	var defaultZoom = 5;
+	var defaultZoom = 14;
  
 	/*
 	*  render_map
@@ -47,7 +47,11 @@
  			if (infowindow) {
  				infowindow.close();	
  			}
- 		});
+		});
+		
+		map.addListener('center_changed', function() {
+			console.log("Map zoom: " + map.zoom);
+		});
 	}
 	 
 	/*
@@ -72,10 +76,8 @@
 
 	 	// marker image
 		var image = {
-	    url: theme_vars.context + '/assets/images/site/clubes/' + chincheta
-	  };
-
-	  console.log(verified);
+	    	url: theme_vars.context + '/assets/images/site/clubes/' + chincheta
+	  	};
 
 		// create marker
 		var marker = new google.maps.Marker({
@@ -131,8 +133,8 @@
 			centerMapByGeocoder(map, 'Spain');
 		} else if( map.markers.length === 1 ) {
 			// set center of map
-			map.setCenter( bounds.getCenter() );
-			map.setZoom( defaultZoom );
+		 	map.setCenter( bounds.getCenter() );
+		 	map.setZoom( defaultZoom );
 		} else {
 			// fit to bounds
 			map.fitBounds( bounds );

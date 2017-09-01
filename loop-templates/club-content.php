@@ -9,7 +9,14 @@
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<div class="row">
+			<div class="col">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</div>
+			<div class="col">
+				<? if ( has_post_thumbnail() ) the_post_thumbnail('thumbnail', array('class' => 'club-logo')); ?>
+			</div>
+		</div>		
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -26,12 +33,14 @@
 		    	</div>
 		    </h4>
 		    -->
+			<!--
 		    <h6 class="card-subtitle mb-2 text-muted">
 				<?php the_post_thumbnail('full', array('class' => 'club-logo')); ?>
 				<span class="club-headquarters"><?php the_field('headquarters'); ?></span>
 				<span class="club-address"><?php the_field('address'); ?></span>
         	</h6>
 		    <hr />
+			-->
 		    <p class="card-text">
 				<div class="details">
 					<ul class="list-group">
@@ -126,8 +135,9 @@
 						</li>
 						<?php endif;  if( get_field('description') ): ?>
 						<li class="list-group-item justify-content-between"><span>Descripci&oacute;n</span><hr />
+							<i class="fa fa-pencil-square" aria-hidden="true"></i>
 							<div>
-								<div class="detail"><span><p style="text-align: left:"><?php the_field('description'); ?></p></span><i class="fa fa-pencil-square" aria-hidden="true"></i></div>
+								<div class="detail"><span><p style="text-align: left:"><?php the_field('description'); ?></p></span></div>
 							</div>
 						</li>
 						<?php endif; ?>

@@ -13,6 +13,8 @@ function seiscientos_clubs_add_scripts() {
 		'0.1', 															// script version
 		true 															// script in footer
 	);
+	$translation_array = array( 'context' => get_stylesheet_directory_uri() );
+ 	wp_localize_script( 'clubs-google-map-init-js', 'theme_vars', $translation_array );
 }
 add_action( 'wp_enqueue_scripts', 'seiscientos_clubs_add_scripts' );
 
