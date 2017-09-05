@@ -20,43 +20,48 @@ add_action( 'wp_enqueue_scripts', 'seiscientos_clubs_add_scripts' );
 
 function seiscientos_get_club_object($id) {
 
-	if ( get_post_thumbnail_id($id) ) { 
+	if ( get_field('logo', $id) ) {
+		$image = wp_get_attachment_image_src( get_field('logo', $id), 'single-post-thumbnail' );
+		$image_url = $image[0];
+	} else if ( get_post_thumbnail_id($id) ) { 
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 		$image_url = $image[0];
-	} 
+	} else {
+		$image_url = "";
+	}
 
 	$club = array ( 
-		'name'								=> get_field('name', $id),
-		'headquarters'				=> get_field('headquarters', $id),
-		'address'							=> get_field('address', $id),
-		'gmap_location' 			=> get_field('gmap_location', $id),
-		'foundation_date'			=> get_field('foundation_date', $id),
-		'is_multimarc'				=> get_field('is_multimarc', $id),
-		'president' 					=> get_field('president', $id),
+		'name'					=> get_field('name', $id),
+		'logo'					=> $image_url, 
+		'headquarters'			=> get_field('headquarters', $id),
+		'address'				=> get_field('address', $id),
+		'gmap_location' 		=> get_field('gmap_location', $id),
+		'foundation_date'		=> get_field('foundation_date', $id),
+		'is_multimarc'			=> get_field('is_multimarc', $id),
+		'president' 			=> get_field('president', $id),
 		'president_phone' 		=> get_field('president_phone', $id),
 		'president_email' 		=> get_field('president_email', $id),
-		'vicepresident' 			=> get_field('vicepresident', $id),
-		'vicepresident_phone' => get_field('vicepresident_phone', $id),
-		'vicepresident_email' => get_field('vicepresident_email', $id),
-		'secretary' 					=> get_field('secretary', $id),
+		'vicepresident' 		=> get_field('vicepresident', $id),
+		'vicepresident_phone'	=> get_field('vicepresident_phone', $id),
+		'vicepresident_email' 	=> get_field('vicepresident_email', $id),
+		'secretary' 			=> get_field('secretary', $id),
 		'secretary_phone' 		=> get_field('secretary_phone', $id),
 		'secretary_email' 		=> get_field('secretary_email', $id),
-		'treasurer' 					=> get_field('treasurer', $id),
+		'treasurer' 			=> get_field('treasurer', $id),
 		'treasurer_phone' 		=> get_field('treasurer_phone', $id),
 		'treasurer_email' 		=> get_field('treasurer_email', $id),
-		'vocal' 							=> get_field('vocal', $id),
-		'vocal_phone' 				=> get_field('vocal_phone', $id),
-		'vocal_email' 				=> get_field('vocal_email', $id),
-		'contact_phone_1'			=> get_field('contact_phone_1', $id),
+		'vocal' 				=> get_field('vocal', $id),
+		'vocal_phone' 			=> get_field('vocal_phone', $id),
+		'vocal_email' 			=> get_field('vocal_email', $id),
+		'contact_phone_1'		=> get_field('contact_phone_1', $id),
 		'contact_phone_2' 		=> get_field('contact_phone_2', $id),
 		'contact_phone_3' 		=> get_field('contact_phone_3', $id),
-		'fax' 								=> get_field('fax', $id),
-		'email' 							=> get_field('email', $id),
-		'webpage' 						=> get_field('webpage', $id),
-		'description' 				=> get_field('description', $id),
-		'verified'		 				=> get_field('verified', $id),
-		'update_date' 				=> get_field('update_date', $id),
-		'image'								=> $image_url
+		'fax' 					=> get_field('fax', $id),
+		'email' 				=> get_field('email', $id),
+		'webpage' 				=> get_field('webpage', $id),
+		'description' 			=> get_field('description', $id),
+		'verified'		 		=> get_field('verified', $id),
+		'update_date' 			=> get_field('update_date', $id)
 	);
 
 	return $club;

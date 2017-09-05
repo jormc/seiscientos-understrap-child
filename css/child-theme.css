@@ -9605,6 +9605,15 @@ iframe {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: .25rem; }
 
+.club-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px; }
+
+.club-name {
+  text-align: center; }
+
 div.club img.club-logo {
   float: right;
   border: 1px solid rgba(0, 0, 0, 0.125);
