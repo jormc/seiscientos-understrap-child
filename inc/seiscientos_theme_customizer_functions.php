@@ -57,7 +57,6 @@ class Seiscientos_Theme_Customizer {
     */
     private function google_settings_section( $wp_customize ) {
 
-        /*
         /////////////////////////////////////
         // Activate Google Analytics Code
         /////////////////////////////////////
@@ -88,7 +87,6 @@ class Seiscientos_Theme_Customizer {
             'type'        => 'text',
             'priority'    => 10
         ) ) );
-        */
 
         /////////////////////////////////////
         // Activate Google Maps API

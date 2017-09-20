@@ -7,6 +7,10 @@
 
 function seiscientos_google_add_scripts() {
     
+    if (!get_theme_mod('google_analytics_code')) {
+        seiscientos_show_error_google_analytics_code();
+    }
+
     if (!get_theme_mod('google_maps_api_key')) {
         seiscientos_show_error_google_maps_api_key();
     } else {
@@ -34,11 +38,20 @@ function seiscientos_google_add_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'seiscientos_google_add_scripts' );
 
+function seiscientos_show_error_google_analytics_code() {
+    print 
+        '<div class="alert alert-danger" role="alert">
+            <strong>Google credentials error</strong>
+            <br />
+            <span>Thre was an error loading Google credentials: ERR_PORT_GOG_001</span>
+        </div>';
+}
+
 function seiscientos_show_error_google_maps_api_key() {
     print 
         '<div class="alert alert-danger" role="alert">
-            <strong>Google Maps API Key Error</strong>
+            <strong>Google credentials error</strong>
             <br />
-            <span>The Google Maps API Key has not been setted in the theme properties.</span>
+            <span>Thre was an error loading Google credentials: ERR_PORT_GOG_002</span>
         </div>';
 }
