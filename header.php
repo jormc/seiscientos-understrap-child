@@ -77,6 +77,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 			  </div>
 			</div>
 		</div>
+
+		<?php seiscientos_show_site_alerts(); ?>
 		
 	</div><!-- .wrapper-navbar end -->
 

@@ -65,3 +65,8 @@
     * Load Google specific scripts and functions
     */
     require 'inc/seiscientos_google_functions.php';
+
+    /**
+    * Load some alert functions
+    */
+    require 'inc/seiscientos_alert_functions.php';

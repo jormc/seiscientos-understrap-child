@@ -35,15 +35,210 @@ class Seiscientos_Theme_Customizer {
         /////////////////////////////////////
         // Add Panels
         /////////////////////////////////////
+        $wp_customize->add_section( 'site_alerts_settings', array(
+            'title'    => __( 'Site alerts', 'seiscientos.org' ),
+            'priority' => 101
+        ) );
+
         $wp_customize->add_section( 'google_settings', array(
             'title'    => __( 'Google Settings', 'seiscientos.org' ),
-            'priority' => 101
+            'priority' => 102
         ) );
 
         /////////////////////////////////////
         // Add settings to sections
         /////////////////////////////////////
+        $this->site_alerts_settings_section( $wp_customize );
         $this->google_settings_section( $wp_customize );
+    }
+
+    /**
+     * Section: Site Alerts Settings
+     *
+     * @param WP_Customize_Manager $wp_customize
+     *
+     * @access private
+     * @since  1.0
+     * @return void
+    */
+    private function site_alerts_settings_section( $wp_customize ) {
+
+        /////////////////////////////////////
+        // Activate Site SUCCESS Alert
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'activate_site_success_alert', array(
+            'default'           => false,
+            'sanitize_callback' => array( $this, 'sanitize_checkbox' )
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'activate_site_success_alert', array(
+            'label'       => esc_html__( 'Activate SUCCESS Alert for this site', 'seiscientos.org' ),
+            'description' => esc_html__( 'Check this on to activate a SUCCESS alert for this site.', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'activate_site_success_alert',
+            'type'        => 'checkbox',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Site SUCCESS Alert title
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'site_success_alert_title', array(
+            'default'           => ''
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'site_success_alert_title', array(
+            'label'       => esc_html__( 'The SUCCESS alert title for this site', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'site_success_alert_title',
+            'type'        => 'text',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Site SUCCESS Alert content
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'site_success_alert_content', array(
+            'default'           => ''
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'site_success_alert_content', array(
+            'label'       => esc_html__( 'The SUCCESS alert content for this site', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'site_success_alert_content',
+            'type'        => 'text',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Activate Site INFO Alert
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'activate_site_info_alert', array(
+            'default'           => false,
+            'sanitize_callback' => array( $this, 'sanitize_checkbox' )
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'activate_site_info_alert', array(
+            'label'       => esc_html__( 'Activate INFO Alert for this site', 'seiscientos.org' ),
+            'description' => esc_html__( 'Check this on to activate an INFO alert for this site.', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'activate_site_info_alert',
+            'type'        => 'checkbox',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Site INFO Alert title
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'site_info_alert_title', array(
+            'default'           => ''
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'site_info_alert_title', array(
+            'label'       => esc_html__( 'The INFO alert title for this site', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'site_info_alert_title',
+            'type'        => 'text',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Site INFO Alert content
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'site_info_alert_content', array(
+            'default'           => ''
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'site_info_alert_content', array(
+            'label'       => esc_html__( 'The INFO alert content for this site', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'site_info_alert_content',
+            'type'        => 'text',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Activate Site WARN Alert
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'activate_site_warn_alert', array(
+            'default'           => false,
+            'sanitize_callback' => array( $this, 'sanitize_checkbox' )
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'activate_site_warn_alert', array(
+            'label'       => esc_html__( 'Activate WARN Alert for this site', 'seiscientos.org' ),
+            'description' => esc_html__( 'Check this on to activate a WARN alert for this site.', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'activate_site_warn_alert',
+            'type'        => 'checkbox',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Site WARN Alert title
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'site_warn_alert_title', array(
+            'default'           => ''
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'site_warn_alert_title', array(
+            'label'       => esc_html__( 'The WARN alert title for this site', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'site_warn_alert_title',
+            'type'        => 'text',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Site WARN Alert content
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'site_warn_alert_content', array(
+            'default'           => ''
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'site_warn_alert_content', array(
+            'label'       => esc_html__( 'The WARN alert content for this site', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'site_warn_alert_content',
+            'type'        => 'text',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Activate Site DANGER Alert
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'activate_site_danger_alert', array(
+            'default'           => false,
+            'sanitize_callback' => array( $this, 'sanitize_checkbox' )
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'activate_site_danger_alert', array(
+            'label'       => esc_html__( 'Activate DANGER Alert for this site', 'seiscientos.org' ),
+            'description' => esc_html__( 'Check this on to activate a DANGER alert for this site.', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'activate_site_danger_alert',
+            'type'        => 'checkbox',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Site DANGER Alert title
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'site_danger_alert_title', array(
+            'default'           => ''
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'site_danger_alert_title', array(
+            'label'       => esc_html__( 'The DANGER alert title for this site', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'site_danger_alert_title',
+            'type'        => 'text',
+            'priority'    => 10
+        ) ) );
+
+        /////////////////////////////////////
+        // Site DANGER Alert content
+        /////////////////////////////////////
+        $wp_customize->add_setting( 'site_danger_alert_content', array(
+            'default'           => ''
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'site_danger_alert_content', array(
+            'label'       => esc_html__( 'The DANGER alert content for this site', 'seiscientos.org' ),
+            'section'     => 'site_alerts_settings',
+            'settings'    => 'site_danger_alert_content',
+            'type'        => 'text',
+            'priority'    => 10
+        ) ) );
+
     }
 
     /**
