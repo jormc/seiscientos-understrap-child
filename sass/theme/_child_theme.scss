@@ -5,10 +5,6 @@ body {
 	background: url("#{$site-common-images}/background.jpg");
 }
 
-img.wp-post-image {
-    display: none !important;
-}
-
 //////////////////////////////////////////////////////////////////////////////
 //	NAVBAR
 //////////////////////////////////////////////////////////////////////////////
@@ -103,6 +99,7 @@ footer.site-footer {
 
 .card {
 	background-color: rgba(0,0,0,0.1);
+	padding: 15px;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -200,55 +197,6 @@ h3.widget-title, h4.widget-title {
 //////////////////////////////////////////////////////////////////////////////
 .wrapper {
 	padding: 0px;
-}
-
-//////////////////////////////////////////////////////////////////////////////
-//	MOBILE Media Queries
-//////////////////////////////////////////////////////////////////////////////
-@media only screen and (max-device-width: 480px) {
-	
-	#wrapper-navbar {
-		margin-bottom: 0px !important;
-		.wrapper-navbar-brand {
-			float: none;
-			text-align: center;
-			a {
-				margin: 0px;
-				.navbar-brand {		
-					width: 100%;
-					img {
-						margin: 0px;
-					}
-				}
-			}
-		}
-
-		h1 {
-			text-align: center;
-			padding: 0px;
-			width: 100%;
-			margin-top: 10px;
-		}
-	}
-
-	h4.card-title {
-		margin-top: .75rem;
-	}
-
-	.card-deck-wrapper {
-		margin: 0px !important;
-	}
-
-	.card.section-card {
-		margin-bottom: 15px !important;
-	}
-
-	// Widgets
-	.widget-area {
-		padding: 5px;
-		margin: 15px;
-	}
-
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -381,6 +329,118 @@ div.club {
 			}
 		};
 
+	}
+
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//	MOBILE Media Queries
+//////////////////////////////////////////////////////////////////////////////
+@media (max-width: 768px) {
+
+	h1 {
+		color: red !important;
+	}
+
+	#wrapper-navbar {
+		
+		margin-bottom: 10px;
+
+		nav.navbar {
+
+			.container {
+				margin: 0px;
+				padding: 0px;
+				text-align: center;
+			
+				div.wrapper-navbar-brand {
+
+					width: 100%;
+
+					.navbar-brand {
+
+						white-space: unset;
+						margin: 0px;
+						padding: 0px;
+
+						img {
+							float: none;
+							
+						}
+
+						h1 {
+							float: none;
+							padding: 0px;
+							margin: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@media only screen and (max-device-width: 480px) {
+
+	#wrapper-navbar {
+		
+		margin-bottom: 10px;
+
+		nav.navbar {
+
+			.container {
+				margin: 0px;
+				padding: 0px;
+				text-align: center;
+			
+				div.wrapper-navbar-brand {
+
+					width: 100%;
+
+					.navbar-brand {
+
+						white-space: unset;
+						margin: 0px;
+						padding: 0px;
+
+						img {
+							float: none;
+							
+						}
+
+						h1 {
+							float: none;
+							padding: 0px;
+							margin: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	h4.card-title {
+		margin-top: .75rem;
+	}
+
+	.card-deck-wrapper {
+		margin: 0px !important;
+	}
+
+	.card.section-card {
+		margin-bottom: 15px !important;
+		text-align: center;
+	}
+
+	// Widgets
+	.widget-area {
+		padding: 5px;
+		margin: 15px;
+	}
+
+	h1.entry-title {
+		text-align: center;
 	}
 
 }

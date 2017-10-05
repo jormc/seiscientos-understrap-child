@@ -47,10 +47,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="wrapper-navbar-brand">
 					<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">					
 						<img src="<?php seiscientos_custom_logo(); ?>" class="img-responsive d-inline-block align-top" alt="" itemprop="logo">
+						<h1><?php bloginfo( 'name' ); ?></h1>
 					</a>
 				</div>
-
-				<h1><?php bloginfo( 'name' ); ?></h1>
 				
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(
