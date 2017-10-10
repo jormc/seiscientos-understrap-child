@@ -1,6 +1,6 @@
 <?php
 /**
- * Partial template for content in section-sidebarpage.php
+ * Partial template for content in section-rightsidebar-page.php
  *
  * @package seiscientos
  */

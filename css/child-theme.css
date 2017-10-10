@@ -9354,16 +9354,18 @@ div.club div.details {
         color: red; }
 
 @media (max-width: 768px) {
-  h1 {
-    color: red !important; }
+  h1.entry-title {
+    text-align: center; }
   #wrapper-navbar {
     margin-bottom: 10px; }
     #wrapper-navbar nav.navbar .container {
+      max-width: 100%;
       margin: 0px;
       padding: 0px;
       text-align: center; }
       #wrapper-navbar nav.navbar .container div.wrapper-navbar-brand {
-        width: 100%; }
+        width: 100%;
+        margin-bottom: 20px; }
         #wrapper-navbar nav.navbar .container div.wrapper-navbar-brand .navbar-brand {
           white-space: unset;
           margin: 0px;

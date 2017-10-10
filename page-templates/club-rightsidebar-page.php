@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Club details
+	Template Name: Club details with right sidebar
 */
 ?>
 
