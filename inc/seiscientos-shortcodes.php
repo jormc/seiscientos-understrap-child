@@ -1,7 +1,7 @@
 <?php
 
    /**
-	* Seiscientos.org Shortcode functions
+	* Seiscientos.org Shortcodes functions
 	*
 	* @package seiscientos
 	*/
@@ -13,6 +13,7 @@
 			'bar' => 'something else',
 		), $atts );
 
+		// See: https://wordpress.stackexchange.com/questions/9978/how-to-use-get-template-part
 		ob_start();
 		get_template_part( 'loop-templates/sections-content' );
 		return ob_get_clean();
@@ -36,10 +37,19 @@
 			$output .= '<ul>';
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
-				// $output .= '<li>' . get_the_title() . '</li>';
+				
+				$postId = get_the_ID();
+				$section = array(
+					'id' => $postId,
+					'post_title' => get_the_title( $postId ),
+					'title' => get_field('section_title', $postId),
+					'excerpt' => get_field('section_excerpt', $postId),
+					'thumbnail' => get_field('section_thumbnail', $postId),
+					'link' => get_permalink($postId)
+				);
 
+				array_push($sections, $section);
 			}
-			//$output .= '</ul>';
 			wp_reset_postdata();
 		} else {
 			// no posts found
@@ -47,10 +57,7 @@
 
 		wp_reset_query();
 
-		// return $output;
-
-		return sections;
-
+		return $sections;
 	}
 
 	//create the shortcode [include] that accepts a filepath and query string
