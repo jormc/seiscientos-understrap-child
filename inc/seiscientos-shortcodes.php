@@ -8,36 +8,42 @@
 
 	// [sections foo="foo-value"]
 	function sections_shortcode_function( $atts, $content = null ) {
-        $a = shortcode_atts( array(
-			'foo' => 'something',
-			'bar' => 'something else',
+        $atts = shortcode_atts( array(
+			'orderby' => 'title',
+			'order' => 'ASC'
 		), $atts );
 
 		// See: https://wordpress.stackexchange.com/questions/9978/how-to-use-get-template-part
+		
 		ob_start();
-		get_template_part( 'loop-templates/sections-content' );
+		// Get the desired sections
+		$sections = get_all_sections($atts);
+		// Inject sections to the content template
+		set_query_var( 'sections', $sections );
+		// Inject the content template
+		get_template_part( 'loop-templates/sections', 'content' );
+		
 		return ob_get_clean();
 	}
 	add_shortcode( 'seiscientos-sections', 'sections_shortcode_function' );
 
-	function get_all_sections() {
+	function get_all_sections($args) {
 
-		$the_query = new WP_Query(
-			array(
-				'post_type' 		=> 'page',
-				'posts_per_page' 	=> -1,
-				'meta_key' 			=> '_wp_page_template',
-				'meta_value' 		=> 'page-templates/section-rightsidebar-page.php'
-			)
-		);
+		$args = wp_parse_args( $args, array(
+			'post_type' 		=> 'page',
+			'posts_per_page' 	=> -1,
+			'meta_key' 			=> '_wp_page_template',
+			'meta_value' 		=> 'page-templates/section-rightsidebar-page.php'
+		) );
+
+		$the_query = new WP_Query($args);
 
 		$sections = [];
 
 		if ( $the_query->have_posts() ) {
-			$output .= '<ul>';
+			
 			while ( $the_query->have_posts() ) {
 				$the_query->the_post();
-				
 				$postId = get_the_ID();
 				$section = array(
 					'id' => $postId,
@@ -47,7 +53,6 @@
 					'thumbnail' => get_field('section_thumbnail', $postId),
 					'link' => get_permalink($postId)
 				);
-
 				array_push($sections, $section);
 			}
 			wp_reset_postdata();

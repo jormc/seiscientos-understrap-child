@@ -4,11 +4,14 @@
  */
 ?>
 
-<div class="card-deck-wrapper">
-
 <?php 
     $count = 0;
-    $sections = get_all_sections(); 
+    
+    // $sections comes from [seiscientos-sections] shortcode
+    if (!isset($sections)) {
+        $sections = get_all_sections(); 
+    }
+    
     foreach ($sections as $section) { 
         $title = $section['title'];
         $post_title = $section['post_title'];

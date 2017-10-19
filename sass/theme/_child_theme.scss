@@ -336,6 +336,21 @@ div.club {
 //////////////////////////////////////////////////////////////////////////////
 //	MOBILE Media Queries
 //////////////////////////////////////////////////////////////////////////////
+@media (max-width: 991px) {
+	h4.card-title {
+		margin-top: .75rem;
+	}
+
+	.card-deck-wrapper {
+		margin: 0px !important;
+	}
+
+	.card.section-card {
+		margin-bottom: 15px !important;
+		text-align: center;
+	}
+}
+
 @media (max-width: 768px) {
 
 	h1.entry-title {
@@ -420,19 +435,6 @@ div.club {
 				}
 			}
 		}
-	}
-
-	h4.card-title {
-		margin-top: .75rem;
-	}
-
-	.card-deck-wrapper {
-		margin: 0px !important;
-	}
-
-	.card.section-card {
-		margin-bottom: 15px !important;
-		text-align: center;
 	}
 
 	// Widgets

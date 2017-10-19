@@ -9353,6 +9353,15 @@ div.club div.details {
       .club-list-accordion ul.club-list li.club-item:before .non-verified {
         color: red; }
 
+@media (max-width: 991px) {
+  h4.card-title {
+    margin-top: .75rem; }
+  .card-deck-wrapper {
+    margin: 0px !important; }
+  .card.section-card {
+    margin-bottom: 15px !important;
+    text-align: center; } }
+
 @media (max-width: 768px) {
   h1.entry-title {
     text-align: center; }
@@ -9396,13 +9405,6 @@ div.club div.details {
             float: none;
             padding: 0px;
             margin: 0px; }
-  h4.card-title {
-    margin-top: .75rem; }
-  .card-deck-wrapper {
-    margin: 0px !important; }
-  .card.section-card {
-    margin-bottom: 15px !important;
-    text-align: center; }
   .widget-area {
     padding: 5px;
     margin: 15px; }
