@@ -1,10 +1,18 @@
 .sass-cache
 bower_components
 node_modules
+<<<<<<< HEAD
 src
+=======
+
+>>>>>>> master
 understrap.zip
 dist
 dist-product
 dist-zip
 npm-debug.log
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 /vendor/

@@ -1,4 +1,5 @@
 /*
+<<<<<<< HEAD
 Theme Name: seiscientos.org
 Theme URI: https://github.com/jormc/seiscientos-understrap-child
 Author: jormc.es
@@ -13,3 +14,18 @@ Text Domain: seiscientos.org
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+=======
+ Theme Name:   UnderStrap Child
+ Theme URI:    https://www.understrap.com
+ Description:  UnderStrap Child Theme
+ Author:       Holger Koenemann
+ Author URI:   http://www.holgerkoenemann.de
+ Template:     understrap
+ Version:      0.3.10
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  understrap-child
+ Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
+ GitHub Theme URI: holger1411/understrap-child
+*/
+>>>>>>> master
